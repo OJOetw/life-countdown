@@ -1,13 +1,12 @@
-
 from datetime import datetime, timedelta
 import time
 import msvcrt
 
 while True:
     print("\n---Life Countdown Menu---")
-    print("\n1.Set Life Expectancy and Current Age.")
-    print("2.the days left of your life.")
-    print("3.the seconds left of your life.")
+    print("\n1.Life Expectancy.")
+    print("2.The days left of your life.")
+    print("3.The seconds left of your life.")
     print("4.Exit")
 
     choice = input("\nPlease choose an option 1 ~ 4 : ")
