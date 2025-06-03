@@ -1,4 +1,4 @@
-# life-countdown
+# life-counter
 
 it is a counter for someone who always feel anxiety about the draining life.
 

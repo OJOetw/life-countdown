@@ -3,13 +3,14 @@ import time
 import msvcrt
 
 while True:
-    print("\n---Life Countdown Menu---")
+    print("\n---Life Counter Menu---")
     print("\n1.Life Expectancy.")
     print("2.The days left of your life.")
     print("3.The seconds left of your life.")
-    print("4.Exit")
+    print("4.How long have you benn living.")
+    print("5.Exit")
 
-    choice = input("\nPlease choose an option 1 ~ 4 : ")
+    choice = input("\nPlease choose an option 1 ~ 5 : ")
 
     if choice == "1":
         life_expectancy = int(input("\nplease enter your expected lifespan (in years): "))
@@ -99,8 +100,29 @@ while True:
                     print(" Stop!")
                     break
         
+    elif choice == "4":
+        birth_input = input("Enter your birthday(YYYY.MM.DD): ")
+        try:
+            birth_date = datetime.strptime(birth_input, "%Y.%m.%d")
+        except ValueError:
+            print("Invalid date format. Please try again.")
+            continue
+        
+        
+            
+        now = datetime.now()
+        days_passed = now - birth_date
+        seconds_alive = int(days_passed.total_seconds())
+        
+        years = seconds_alive // (365*24*60*60)
+        days = seconds_alive // (24*60*60)
+        hours = seconds_alive // (60*60)
+        seconds = 
+        print(f"You have been alive for {seconds_alive} days")
+        
+
     
-    elif choice == "4":       
+    elif choice == "5":
          print("...")
          time.sleep(1)
          print("...")
@@ -109,9 +131,12 @@ while True:
          time.sleep(4)
          break
 
-#test git
+
     elif choice == "jookerej":
+        print("...")
+        time.slepp(1)
         print("omedetou")
+        time.sleep(2)
 
     else:
          print("\nInvalid option. Please choose 1 ~ 4 !" + "\n")
