@@ -13,8 +13,8 @@ while True:
     choice = input("\nPlease choose an option 1 ~ 4 : ")
 
     if choice == "1":
-        life_expectancy = int(input("\nplease enter your expected lifespan (in years): "))
-        birth_input = input("please enter your birthday (YYYY.MM.DD): ")
+        life_expectancy = int(input("\nPlease enter your expected lifespan (in years): "))
+        birth_input = input("Please enter your birthday (YYYY.MM.DD): ")
         try:
             birth_date = datetime.strptime(birth_input, "%Y.%m.%d")
         except ValueError:
@@ -95,7 +95,7 @@ while True:
             if msvcrt.kbhit():
                 key = msvcrt.getwch()
                 if key == "\r":
-                    print(" Stop!")
+                    print(" !Stop!")
                     break
         
     elif choice == "3":
@@ -112,18 +112,26 @@ while True:
         days_passed = now - birth_date
         seconds_alive = int(days_passed.total_seconds())
 
+        print("\n( Press [enter] to stop counting down. )\n")
+
         while seconds_alive > 0:       
             years = seconds_alive // (365*24*60*60)
             days = (seconds_alive % (365 * 24 * 60 * 60)) // (60 * 60 * 24)
             hours = (seconds_alive % (60 * 60 * 24)) // (60 * 60)
             minutes = (seconds_alive % (60 * 60)) // (60)
             seconds = seconds_alive % 60
-            msg = f"\nYou have been living: {years} years {days} days {hours} hours {minutes} minutes {seconds} seconds"
+            msg = f"You have been living: {years} years {days} days {hours} hours {minutes} minutes {seconds} seconds"
             print(f"\r{msg:<65}", end = "", flush = True)
             time.sleep(1)
             seconds_alive -= 1
             #\r means return to the head of sentence
-        
+            
+            if msvcrt.kbhit():
+                
+                key = msvcrt.getwch()
+                if key == "\r":
+                    print("!Stop!")
+                    break
 
     
     elif choice == "4":
