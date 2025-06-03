@@ -45,7 +45,7 @@ while True:
             
             #print(f"Time remaining: {years} years {days} days {hours} hours {minutes} minutes {seconds} seconds", end = "\r", flush = True)
             msg = f"Time remaining: {years} years {days} days {hours} hours {minutes} minutes {seconds} seconds"
-            print(f"\r{msg:<65}", end = "", flush = True)     
+            print(f"\r{msg:<65}", end = "", flush = True)
             time.sleep(1)
             seconds_left -= 1
 
@@ -113,12 +113,18 @@ while True:
         now = datetime.now()
         days_passed = now - birth_date
         seconds_alive = int(days_passed.total_seconds())
-        
-        years = seconds_alive // (365*24*60*60)
-        days = seconds_alive // (24*60*60)
-        hours = seconds_alive // (60*60)
-        seconds = 
-        print(f"You have been alive for {seconds_alive} days")
+
+        while seconds_alive > 0:       
+            years = seconds_alive // (365*24*60*60)
+            days = (seconds_alive % (365 * 24 * 60 * 60)) // (60 * 60 * 24)
+            hours = (seconds_alive % (60 * 60 * 24)) // (60 * 60)
+            minutes = (seconds_alive % (60 * 60)) // (60)
+            seconds = seconds_alive % 60
+            msg = f"You have been living: {years} years {days} days {hours} hours {minutes} minutes {seconds} seconds"
+            print(f"\r{msg:<65}", end = "", flush = True)
+            time.sleep(1)
+            seconds_alive -= 1
+            #\r means return to the head of sentence
         
 
     
