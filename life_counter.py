@@ -31,7 +31,7 @@ while True:
 
         expected_death_date = birth_date + timedelta(days = life_expectancy * 365)
         days_left = (expected_death_date - now).days
-        print(f"\n~~You still have approximately {days_left} days left~~\n")
+        print(f"\n~~You still have approximately {days_left} days left\n")
 
         while seconds_left > 0:
             years = seconds_left // (365 * 24 * 60 * 60)
