@@ -4,10 +4,10 @@ import msvcrt
 
 while True:
     print("\n---Life Counter Menu---")
-    print("\n1.Life Expectancy.")
+    print("\n1.View life expectancy countdown")
     #print("2.The days left of your life.")
-    print("2.The seconds left of your life.")
-    print("3.How long have you benn living.")
+    print("2.View total seconds remaining")
+    print("3.View time you've already lived")
     print("4.Exit")
 
     choice = input("\nPlease choose an option 1 ~ 4 : ")
