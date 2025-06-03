@@ -1,10 +1,10 @@
 # life-counter
 
-it is a counter for someone who always feel anxiety about the draining life.
+It is a counter for those who always feel anxiety about the draining life.
 
-use the options 1 to 4 to select a function.
+Use the options 1 to 4 to select a function.
 
-please don't forget to live the life meaningfully.
+Don't forget to live the life meaningfully.
 
 ----
 ojoetw
